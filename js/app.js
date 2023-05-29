@@ -50,13 +50,11 @@ cursos.forEach((curso) => {
         carritoCont();
         saveLocal();
 
-        Swal.fire({
-            title: "¡Genial!",
-            text: `Agregaste el curso "${curso.nombre}" a tu carrito.`,
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-        });
+        Toastify({
+            text: `¡Perfecto! Agregaste el curso "${curso.nombre}" al carrito`,
+            duration: 2500,
+            className: 'notificacion'
+        }).showToast();
     });
 });
 

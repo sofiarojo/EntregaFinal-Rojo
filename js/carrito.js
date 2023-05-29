@@ -54,15 +54,26 @@ const pintarCarrito = () => {
         let eliminar = contenidoCarrito.querySelector(".delete-curso");
 
         eliminar.addEventListener("click", () => {
-            eliminarCurso(curso.id);
-
             Swal.fire({
                 title: "¡Atención!",
-                text: `Eliminaste el curso "${curso.nombre}" de tu carrito.`,
+                text: `¿Querés eliminar el curso "${curso.nombre}"?`,
                 icon: "warning",
-            });
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Eliminar',
+                cancelButtonText: `Cancelar`,
+            }).then((result) => {
+                if(result.isConfirmed){
+                    eliminarCurso(curso.id);
+                    Swal.fire({
+                        title: "¡Listo!",
+                        icono: "success",
+                        text: "Se ha eliminado el curso de tu carrito. 😔"
+                    })
+                }
+            })
         });
-
     });
 
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
