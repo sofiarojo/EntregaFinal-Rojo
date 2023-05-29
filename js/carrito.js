@@ -112,5 +112,4 @@ const carritoCont = () => {
 };
 carritoCont();
 
-// ----- Vaciar Carrito ----->
 

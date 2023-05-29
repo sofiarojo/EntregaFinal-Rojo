@@ -51,7 +51,7 @@ cursos.forEach((curso) => {
         saveLocal();
 
         Toastify({
-            text: `¡Perfecto! Agregaste el curso "${curso.nombre}" al carrito`,
+            text: `¡Perfecto!✨ Agregaste el curso "${curso.nombre}" al carrito.`,
             duration: 2500,
             className: 'notificacion'
         }).showToast();
