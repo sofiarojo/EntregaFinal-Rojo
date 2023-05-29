@@ -69,7 +69,7 @@ const pintarCarrito = () => {
                     Swal.fire({
                         title: "¡Listo!",
                         icono: "success",
-                        text: "Se ha eliminado el curso de tu carrito. 😔"
+                        text: "Se ha eliminado de tu carrito. 😔"
                     })
                 }
             })
@@ -81,7 +81,6 @@ const pintarCarrito = () => {
     const totalCompra = document.createElement("button");
     totalCompra.className = "total-contenido";
     totalCompra.innerHTML =  `Total a pagar : $${total}`;
-    
     contenidoVentana.append(totalCompra);
 
 };
