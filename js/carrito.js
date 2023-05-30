@@ -53,7 +53,7 @@ const pintarCarrito = () => {
 
         let eliminar = contenidoCarrito.querySelector(".delete-curso");
 
-        eliminar.addEventListener("click", () => {
+        eliminar.addEventListener("click", () => {     //Uso de "libreria" SweetAlert2 para eliminar cursos del carrito
             Swal.fire({
                 title: "¡Atención!",
                 text: `¿Querés eliminar el curso "${curso.nombre}"?`,
@@ -68,8 +68,10 @@ const pintarCarrito = () => {
                     eliminarCurso(curso.id);
                     Swal.fire({
                         title: "¡Listo!",
-                        icono: "success",
-                        text: "Se ha eliminado de tu carrito. 😔"
+                        icon: "info",
+                        text: "Se ha eliminado de tu carrito 😔",
+                        showConfirmButton: false,
+                        timer: 1500,
                     })
                 }
             })
@@ -82,7 +84,22 @@ const pintarCarrito = () => {
     totalCompra.className = "total-contenido";
     totalCompra.innerHTML =  `Total a pagar : $${total}`;
     contenidoVentana.append(totalCompra);
-
+    
+    totalCompra.addEventListener("click", () => {    //Agregando confirmacion de compra con "libreria SweetAlert2"
+        if(carrito.length === 0){
+            Swal.fire(
+                '¡Atención!',
+                'El carrito está vacio, agregue algún curso para continuar con la compra.',
+                'warning'
+                )
+        }else{
+            Swal.fire(
+                '¡Compra confirmada!🎉',
+                'Muchas gracias por confiar en nosotros.',
+                'success'
+            )
+        }
+    })
 };
 
 verCarrito.addEventListener("click", pintarCarrito);
@@ -110,5 +127,4 @@ const carritoCont = () => {
 
 };
 carritoCont();
-
 

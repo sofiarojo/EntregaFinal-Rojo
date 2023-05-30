@@ -50,9 +50,10 @@ cursos.forEach((curso) => {
         carritoCont();
         saveLocal();
 
-        Toastify({
+        //Utilizacion de la "libreria" Toastify para avisarle que agrego algun curso al carrito
+        Toastify({    
             text: `¡Perfecto!✨ Agregaste el curso "${curso.nombre}" al carrito.`,
-            duration: 2500,
+            duration: 1500,
             className: 'notificacion'
         }).showToast();
     });
