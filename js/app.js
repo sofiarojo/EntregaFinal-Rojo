@@ -4,8 +4,6 @@ const verCarrito = document.getElementById("verCarrito");
 const contenidoVentana = document.getElementById("contenidoVentana");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
-//----- Variable del carrito ----->
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //----- Recorriendo los cursos ----->
 

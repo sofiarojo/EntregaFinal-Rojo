@@ -1,3 +1,6 @@
+//----- Variable del carrito ----->
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 // ----- Carrito/ Ventana del Carrito ----->
 const pintarCarrito = () => {
     contenidoVentana.innerHTML = "";
