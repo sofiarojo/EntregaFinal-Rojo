@@ -8,6 +8,15 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //----- Recorriendo los cursos ----->
+
+const getCursos = async () => {
+    const response = await fetch("data.json");
+    const data = await response.json();
+    console.log(data);
+};
+
+getCursos();
+
 cursos.forEach((curso) => {
     let contenido = document.createElement("div");
     contenido.className = "card";
