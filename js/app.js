@@ -56,7 +56,7 @@ const getCursos = async () => {
             //Utilizacion de la "libreria" Toastify para avisarle que agrego algun curso al carrito
             Toastify({    
                 text: `¡Perfecto!✨ Agregaste el curso "${curso.nombre}" al carrito.`,
-                duration: 1500,
+                duration: 1200,
                 className: 'notificacion'
             }).showToast();
         });
